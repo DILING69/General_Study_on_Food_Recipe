@@ -50,7 +50,8 @@ Then we checked the data type of each column to see if they are proper.
 
 1. We casted `tags`,`nutrition`,`steps`, and `ingredients` columns from columns of string to columns of list that is the correct types for these columns.
 2. We extracted the calories data and put into a new column named `calories (#)` to make our analysis easier later
-3. We check the unique for calories, and drop any rows with colories more than 15k. 15k calories and above from a recipe is not a reasonable, since the recommended daily calorie intake is 2000-2500 calorie
+3. We checked the unique for calories, and drop any rows with colories more than 15k. 15k calories and above from a recipe is not a reasonable, since the recommended daily calorie intake is 2000-2500 calorie
+4. We dropped `steps`,`tags`,`ingredients`,and `nutrition` columns. We are not using these columns in our analysis
 
 Below is the first five rows of the eda_df
 
