@@ -33,3 +33,7 @@ We will use the two datasets to answer these questions. `RAW_recipes.csv` has a 
 From `RAW_recipes.csv`, we will be working closely with the nutritions column. This column contains the nutrition information of the recipe such as the number of calories, total fat, etc.. We will look at the number of calories of each recipe from this column
 
 From `RAW_interactions.csv`, we will work closely with the rating column. This column contains the rating from 1 to 5 of recipes given by different users. 
+
+## Cleaning and EDA
+
+### Data Cleaning
