@@ -1,3 +1,4 @@
+# General Study on Food Recipe
 ## Introduction
 For this project, we are working closely with two CSV files, `RAW_recipes.csv` and  `RAW_interactions.csv`. `RAW_recipes.csv` contains the information about the recipes, including:
 - the recipe name
