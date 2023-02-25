@@ -55,17 +55,17 @@ Then we checked the data type of each column to see if they are proper.
 
 Below is the first five rows of the eda_df
 
-|    | name                                 |     id |   minutes |   contributor_id | submitted   |   n_steps | description                                                                                                                                                                                                                                                                                                                                                                       |   n_ingredients |   average_rating |   calories (#) |
+| | name | id | minutes | contributor_id | submitted | n_steps | description | n_ingredients | average_rating | calories (#) |
 
-|  0 | 1 brownies in the world    best ever | 333281 |        40 |           985201 | 2008-10-27  |        10 | these are the most; chocolatey, moist, rich, dense, fudgy, delicious brownies that you\'ll ever make.....sereiously! there\'s no doubt that these will be your fav brownies ever for you can add things to them or make them plain.....either way they\'re pure heaven!                                                                                                              |               9 |                4 |          138.4 |
+| 0 | 1 brownies in the world best ever | 333281 | 40 | 985201 | 2008-10-27 | 10 | these are the most; chocolatey, moist, rich, dense, fudgy, delicious brownies that you\'ll ever make.....sereiously! there\'s no doubt that these will be your fav brownies ever for you can add things to them or make them plain.....either way they\'re pure heaven! | 9 | 4 | 138.4 |
 
-|  1 | 1 in canada chocolate chip cookies   | 453467 |        45 |          1848091 | 2011-04-11  |        12 | this is the recipe that we use at my school cafeteria for chocolate chip cookies. they must be the best chocolate chip cookies i have ever had! if you don\'t have margarine or don\'t like it, then just use butter (softened) instead.                                                                                                                                            |              11 |                5 |          595.1 |
+| 1 | 1 in canada chocolate chip cookies | 453467 | 45 | 1848091 | 2011-04-11 | 12 | this is the recipe that we use at my school cafeteria for chocolate chip cookies. they must be the best chocolate chip cookies i have ever had! if you don\'t have margarine or don\'t like it, then just use butter (softened) instead. | 11 | 5 | 595.1 |
 
-|  2 | 412 broccoli casserole               | 306168 |        40 |            50969 | 2008-05-30  |         6 | since there are already 411 recipes for broccoli casserole posted to "zaar" ,i decided to call this one  #412 broccoli casserole.i don\'t think there are any like this one in the database. i based this one on the famous "green bean casserole" from campbell\'s soup. but i think mine is better since i don\'t like cream of mushroom soup.submitted to "zaar" on may 28th,2008 |               9 |                5 |          194.8 |
+| 2 | 412 broccoli casserole | 306168 | 40 | 50969 | 2008-05-30 | 6 | since there are already 411 recipes for broccoli casserole posted to "zaar" ,i decided to call this one #412 broccoli casserole.i don\'t think there are any like this one in the database. i based this one on the famous "green bean casserole" from campbell\'s soup. but i think mine is better since i don\'t like cream of mushroom soup.submitted to "zaar" on may 28th,2008 | 9 | 5 | 194.8 |
 
-|  3 | millionaire pound cake               | 286009 |       120 |           461724 | 2008-02-12  |         7 | why a millionaire pound cake?  because it\'s super rich!  this scrumptious cake is the pride of an elderly belle from jackson, mississippi.  the recipe comes from "the glory of southern cooking" by james villas.                                                                                                                                                                |               7 |                5 |          878.3 |
+| 3 | millionaire pound cake | 286009 | 120 | 461724 | 2008-02-12 | 7 | why a millionaire pound cake? because it\'s super rich! this scrumptious cake is the pride of an elderly belle from jackson, mississippi. the recipe comes from "the glory of southern cooking" by james villas. | 7 | 5 | 878.3 |
 
-|  4 | 2000 meatloaf                        | 475785 |        90 |          2202916 | 2012-03-06  |        17 | ready, set, cook! special edition contest entry: a mediterranean flavor inspired meatloaf dish. featuring: simply potatoes - shredded hash browns, egg, bacon, spinach, red bell pepper, and goat cheese.                                                                                                                                                                         |              13 |                5 |          267   |'
+| 4 | 2000 meatloaf | 475785 | 90 | 2202916 | 2012-03-06 | 17 | ready, set, cook! special edition contest entry: a mediterranean flavor inspired meatloaf dish. featuring: simply potatoes - shredded hash browns, egg, bacon, spinach, red bell pepper, and goat cheese. | 13 | 5 | 267 |'
 
 ### Univariate Analysis
 
@@ -96,3 +96,20 @@ This df is the source of the histogram above
 We identify the column of description as the NMAR. It is not reasonable to conclude that the missingness of description would depend on any other columns. In the data generating process, the missingness of description is occurred when the recipe owner did not enter any description when they upload the recipes, or they enter a invalid description that is prohibited by the website. In this case, the missingness of description depends on the description itself.
 
 ### Missingness Dependency
+
+We believe the missingness of the Average rating does not depend on column minutes. We create density graph to check the distribution of n_steps. The graph below shows the distributions of minutes depending on if the average rating is missing or not. It shows, two distributions are similiar and have different mean. Thus, we can use absolute mean difference of minutes as our test statistics to test dependency of average rating by performing permutation test.
+
+<iframe src="assets/Minutes_by_Missingness_of_Average_rating.html" width=800 height=600 frameBorder=0></iframe>
+
+null hypothesis: The missingness of average rating does not depends on minutes
+alternative hypothesis: The missingness of average rating depends on minutes
+
+This is the graph created by permutation test. By comparing the observed statistic with the permutated data, we found the p_value is 0.83, so we failed to reject the null hypothesis. Also, by plotting the observed, we can get the same conclusion
+
+We believe the missingness of the Average rating does depend on column n_steps. We repeated steps above to check the distribution of n_steps regarding of the missingness of average rating. The graph below is the distribution graphs. It shows, two distributions are similiar and have different mean. Thus, we can use absolute mean difference of n_steps as our test statistics to test dependency of average rating by performing permutation test.
+
+<iframe src="assets/n_steps_by Missingness_of_Average_rating.html" width=800 height=600 frameBorder=0></iframe>
+
+This is the graph created by permutation test. By comparing the observed statistic with the permutated data, we found the p_value is 0.022, so we rejected the null hypothesis. The missingness of average rating does depend on n_steps. Also, by plotting the observed, we can get the same conclusion
+
+<iframe src="assets/Empirical_distribution_of_the_Mean_differences_in_Minutes_two.html" width=800 height=600 frameBorder=0></iframe>
