@@ -112,6 +112,9 @@ We believe the missingness of the Average rating does depend on column n_steps. 
 
 <iframe src="assets/n_steps_by Missingness_of_Average_rating.html" width=800 height=600 frameBorder=0></iframe>
 
+null hypothesis: The missingness of average rating does not depends on minutes.
+alternative hypothesis: The missingness of average rating depends on minutes.
+
 This is the graph created by permutation test. By comparing the observed statistic with the permutated data, we found the p_value is 0.022, so we rejected the null hypothesis. The missingness of average rating does depend on n_steps. Also, by plotting the observed, we can get the same conclusion
 
 <iframe src="assets/Empirical_distribution_of_the_Mean_differences_in_n_steps.html" width=800 height=600 frameBorder=0></iframe>
