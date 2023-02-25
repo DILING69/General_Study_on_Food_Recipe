@@ -29,7 +29,7 @@ With these datasets, we are trying to discover the relationship between the numb
 
 - Is the missingness of the average rating related to itself (Not missing at random(NMAR))
 - Is the missingness of the average rating related to the number of calories of the recipe (Missing at Random(MAR))
-- Does higher number of calories imply a higher rating of the recipe?
+- **Does higher number of calories imply a higher rating of the recipe?**
 
 These questions are important topics to study because the answer to these questions could show us the attitude people have towards recipes of different number of calories. We could learn about people's life style and preferences in such way.
 
