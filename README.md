@@ -27,8 +27,8 @@ These datasets are important because by working with both of them at the same ti
 
 With these datasets, we are trying to discover the relationship between the number of calories of the recipe and the average rating that the recipe received.
 
-- Is the missingness of the rating related to itself (Not missing at random(NMAR))
-- Is the missingness of the rating related to the number of calories of the recipe (Missing at Random(MAR))
+- Is the missingness of the average rating related to itself (Not missing at random(NMAR))
+- Is the missingness of the average rating related to the number of calories of the recipe (Missing at Random(MAR))
 - Does higher number of calories imply a higher rating of the recipe?
 
 These questions are important topics to study because the answer to these questions could show us the attitude people have towards recipes of different number of calories. We could learn about people's life style and preferences in such way.
@@ -98,7 +98,7 @@ This df is the source of the histogram above
 
 ### NMAR Analysis
 
-We identify the column of description as the NMAR. It is not reasonable to conclude that the missingness of description would depend on any other columns. In the data generating process, the missingness of description is occurred when the recipe owner did not enter any description when they upload the recipes, or they enter a invalid description that is prohibited by the website. In this case, the missingness of description depends on the description itself.
+We identify the column of description as the **NMAR**. It is not reasonable to conclude that the missingness of description would depend on any other columns. In the data generating process, the missingness of description is occurred when the recipe owner did not enter any description when they upload the recipes, or they enter a invalid description that is prohibited by the website. In this case, the missingness of description depends on the description itself.
 
 ### Missingness Dependency
 
@@ -106,8 +106,9 @@ We believe the missingness of the Average rating does not depend on column minut
 
 <iframe src="assets/Minutes_by_Missingness_of_Average_rating.html" width=800 height=600 frameBorder=0></iframe>
 
-null hypothesis: The missingness of average rating does not depends on minutes.
-alternative hypothesis: The missingness of average rating depends on minutes.
+**null hypothesis**: The missingness of average rating does not depends on minutes.
+
+**alternative hypothesis**: The missingness of average rating depends on minutes.
 
 This is the graph created by permutation test. By comparing the observed statistic with the permutated data, we found the p_value is 0.83, so we failed to reject the null hypothesis. Also, by plotting the observed, we can get the same conclusion
 
@@ -117,8 +118,9 @@ We believe the missingness of the Average rating does depend on column n_steps. 
 
 <iframe src="assets/n_steps_by Missingness_of_Average_rating.html" width=800 height=600 frameBorder=0></iframe>
 
-null hypothesis: The missingness of average rating does not depends on minutes.
-alternative hypothesis: The missingness of average rating depends on minutes.
+**null hypothesis**: The missingness of average rating does not depends on minutes.
+
+**alternative hypothesis**: The missingness of average rating depends on minutes.
 
 This is the graph created by permutation test. By comparing the observed statistic with the permutated data, we found the p_value is 0.022, so we rejected the null hypothesis. The missingness of average rating does depend on n_steps. Also, by plotting the observed, we can get the same conclusion
 
@@ -126,10 +128,13 @@ This is the graph created by permutation test. By comparing the observed statist
 
 ## Hypothesis Testing
 
-Null hypothesis: high calories(more than 2000 cal) recipes are equally likely to receive high(larger or equal to 2.5 rating) and low average ratings
-Alternative hypothesis: high calories(more than 2000 cal) recipes are more likely to have high(larger or equal to 2.5 rating) average rating compared
+**Null hypothesis**: high calories(more than 2000 cal) recipes are equally likely to receive high(larger or equal to 2.5 rating) and low average ratings
+
+**Alternative hypothesis**: high calories(more than 2000 cal) recipes are more likely to have high(larger or equal to 2.5 rating) average rating compared
 We chose the proportion of high ratings to be our test statistic because it reflects parameter that we are curious about.
-In terms of significant level, we choose 0.05, because our sample size is 100000. Because our sample size so large, anything below 0.05 should be considered significant.
-In the end, we got 0 as out p value. Therefore our conclusion is to reject the null because the event is so rare that there isn't a single time that our sample under the null gave anything at least extreme as the observed statistic.
+
+In terms of **significant level**, we choose 0.05, because our sample size is 100000. Because our sample size so large, anything below 0.05 should be considered significant.
+
+In the end, we got 0 as out p value. Therefore our conclusion is to **reject the null** because the event is so rare that there isn't a single time that our sample under the null gave anything at least extreme as the observed statistic.
 
 <iframe src="assets/Empirical_distribution_of_the_proportion_of_high_ratings.html" width=800 height=600 frameBorder=0></iframe>
