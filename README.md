@@ -87,7 +87,12 @@ This df is groupby the average rating category (each category is 0.5), and we ca
 
 This df is the source of the histogram above
 
-<table border="1" class="dataframe">\n  <thead>\n    <tr style="text-align: right;">\n      <th></th>\n      <th>rating_category</th>\n      <th>calories (#)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>(0.996, 1.4]</td>\n      <td>447.964407</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>(1.4, 1.8]</td>\n      <td>391.865000</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>(1.8, 2.2]</td>\n      <td>462.223226</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>(2.2, 2.6]</td>\n      <td>367.801429</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>(2.6, 3.0]</td>\n      <td>434.062426</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>(3.0, 3.4]</td>\n      <td>476.333000</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>(3.4, 3.8]</td>\n      <td>440.429185</td>\n    </tr>\n    <tr>\n      <th>7</th>\n      <td>(3.8, 4.2]</td>\n      <td>423.680808</td>\n    </tr>\n    <tr>\n      <th>8</th>\n      <td>(4.2, 4.6]</td>\n      <td>414.621617</td>\n    </tr>\n    <tr>\n      <th>9</th>\n      <td>(4.6, 5.0]</td>\n      <td>422.623487</td>\n    </tr>\n  </tbody>\n</table>
+| name | id | minutes | contributor_id | submitted | n_steps | description | n_ingredients | average_rating | calories (#) |
+| 1 brownies in the world best ever | 333281 | 40 | 985201 | 2008-10-27 | 10 | these are the most; chocolatey, moist, rich, dense, fudgy, delicious brownies that you\'ll ever make.....sereiously! there\'s no doubt that these will be your fav brownies ever for you can add things to them or make them plain.....either way they\'re pure heaven! | 9 | 4 | 138.4 |
+| 1 in canada chocolate chip cookies | 453467 | 45 | 1848091 | 2011-04-11 | 12 | this is the recipe that we use at my school cafeteria for chocolate chip cookies. they must be the best chocolate chip cookies i have ever had! if you don\'t have margarine or don\'t like it, then just use butter (softened) instead. | 11 | 5 | 595.1 |
+| 412 broccoli casserole | 306168 | 40 | 50969 | 2008-05-30 | 6 | since there are already 411 recipes for broccoli casserole posted to "zaar" ,i decided to call this one #412 broccoli casserole.i don\'t think there are any like this one in the database. i based this one on the famous "green bean casserole" from campbell\'s soup. but i think mine is better since i don\'t like cream of mushroom soup.submitted to "zaar" on may 28th,2008 | 9 | 5 | 194.8 |
+| millionaire pound cake | 286009 | 120 | 461724 | 2008-02-12 | 7 | why a millionaire pound cake? because it\'s super rich! this scrumptious cake is the pride of an elderly belle from jackson, mississippi. the recipe comes from "the glory of southern cooking" by james villas. | 7 | 5 | 878.3 |
+| 2000 meatloaf | 475785 | 90 | 2202916 | 2012-03-06 | 17 | ready, set, cook! special edition contest entry: a mediterranean flavor inspired meatloaf dish. featuring: simply potatoes - shredded hash browns, egg, bacon, spinach, red bell pepper, and goat cheese. | 13 | 5 | 267 |
 
 ## Assessment of Missingness
 
@@ -121,7 +126,10 @@ This is the graph created by permutation test. By comparing the observed statist
 
 ## Hypothesis Testing
 
-Null hypothesis: high calories(more than 2000 cal) recipes are equally likely to have high(larger or equal to 2.5 rating) and low average rating compared with low calories recipes
-Alternative hypothesis: high calories(more than 2000 cal) recipes are more likely to have high(larger or equal to 2.5 rating) average rating compared with low calories recipes
+Null hypothesis: high calories(more than 2000 cal) recipes are equally likely to receive high(larger or equal to 2.5 rating) and low average ratings
+Alternative hypothesis: high calories(more than 2000 cal) recipes are more likely to have high(larger or equal to 2.5 rating) average rating compared
+We chose the proportion of high ratings to be our test statistic because it reflects parameter that we are curious about.
+In terms of significant level, we choose 0.05, because our sample size is 100000. Because our sample size so large, anything below 0.05 should be considered significant.
+In the end, we got 0 as out p value. Therefore our conclusion is to reject the null because the event is so rare that there isn't a single time that our sample under the null gave anything at least extreme as the observed statistic.
 
 <iframe src="assets/Empirical_distribution_of_the_proportion_of_high_ratings.html" width=800 height=600 frameBorder=0></iframe>
