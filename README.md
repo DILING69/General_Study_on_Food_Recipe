@@ -77,13 +77,13 @@ This is the visualization for calories distribution. As the calories increases f
 
 This is the visualization for calories distribution.This scatterplot's x-axis is the average rating for the dishes, and y-axis is the calories of that dishes except for the clustering on the whole number rating. Sometimes, there is only one review that would only create whole number rating.
 
-<iframe src="assets/scatter_of_avgRating_and_recipe_calories.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/Avergage-Rating-vs.-Recipes's-Calories.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Interesting Aggregates
 
 This df is groupby the average rating category (each category is 0.5), and we calculated its avergae calories. By observing the graph, we can observe a general decreasing trend of calories as the average rating increases
 
-<iframe src="assets/Hist_of_caloriesSum_among_Ratings.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/Distribution-of-calories-among-all-recipes.html.html" width=800 height=600 frameBorder=0></iframe>
 
 This df is the source of the histogram above
 
