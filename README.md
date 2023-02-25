@@ -83,7 +83,7 @@ This is the visualization for calories distribution.This scatterplot's x-axis is
 
 This df is groupby the average rating category (each category is 0.5), and we calculated its avergae calories. By observing the graph, we can observe a general decreasing trend of calories as the average rating increases
 
-<iframe src="assets/Distribution-of-calories-among-all-recipes.html.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/Hist_of_caloriesSum_among_Ratings.html" width=800 height=600 frameBorder=0></iframe>
 
 This df is the source of the histogram above
 
