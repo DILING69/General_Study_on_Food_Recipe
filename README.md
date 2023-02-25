@@ -101,10 +101,12 @@ We believe the missingness of the Average rating does not depend on column minut
 
 <iframe src="assets/Minutes_by_Missingness_of_Average_rating.html" width=800 height=600 frameBorder=0></iframe>
 
-null hypothesis: The missingness of average rating does not depends on minutes
-alternative hypothesis: The missingness of average rating depends on minutes
+null hypothesis: The missingness of average rating does not depends on minutes.
+alternative hypothesis: The missingness of average rating depends on minutes.
 
 This is the graph created by permutation test. By comparing the observed statistic with the permutated data, we found the p_value is 0.83, so we failed to reject the null hypothesis. Also, by plotting the observed, we can get the same conclusion
+
+<iframe src="assets/Empirical_distribution_of_the_Mean_differences_in_minutes_two.html" width=800 height=600 frameBorder=0></iframe>
 
 We believe the missingness of the Average rating does depend on column n_steps. We repeated steps above to check the distribution of n_steps regarding of the missingness of average rating. The graph below is the distribution graphs. It shows, two distributions are similiar and have different mean. Thus, we can use absolute mean difference of n_steps as our test statistics to test dependency of average rating by performing permutation test.
 
@@ -112,4 +114,4 @@ We believe the missingness of the Average rating does depend on column n_steps. 
 
 This is the graph created by permutation test. By comparing the observed statistic with the permutated data, we found the p_value is 0.022, so we rejected the null hypothesis. The missingness of average rating does depend on n_steps. Also, by plotting the observed, we can get the same conclusion
 
-<iframe src="assets/Empirical_distribution_of_the_Mean_differences_in_Minutes_two.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/Empirical_distribution_of_the_Mean_differences_in_n_steps.html" width=800 height=600 frameBorder=0></iframe>
