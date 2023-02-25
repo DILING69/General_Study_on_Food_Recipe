@@ -118,3 +118,10 @@ alternative hypothesis: The missingness of average rating depends on minutes.
 This is the graph created by permutation test. By comparing the observed statistic with the permutated data, we found the p_value is 0.022, so we rejected the null hypothesis. The missingness of average rating does depend on n_steps. Also, by plotting the observed, we can get the same conclusion
 
 <iframe src="assets/Empirical_distribution_of_the_Mean_differences_in_n_steps.html" width=800 height=600 frameBorder=0></iframe>
+
+## Hypothesis Testing
+
+Null hypothesis: high calories(more than 2000 cal) recipes are equally likely to have high(larger or equal to 2.5 rating) and low average rating compared with low calories recipes
+Alternative hypothesis: high calories(more than 2000 cal) recipes are more likely to have high(larger or equal to 2.5 rating) average rating compared with low calories recipes
+
+<iframe src="assets/Empirical_distribution_of_the_proportion_of_high_ratings_if_the_average_ratings_do_not_relate_to_calories.html" width=800 height=600 frameBorder=0></iframe>
